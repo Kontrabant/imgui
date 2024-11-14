@@ -1,0 +1,4 @@
+[submodule "SDL"]
+	path = SDL
+	url = https://github.com/kontrabant/SDL.git
+	branch = wl_ext_zones
