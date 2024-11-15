@@ -19,6 +19,7 @@
 #include <stdio.h>          // printf, fprintf
 #include <stdlib.h>         // abort
 #include <SDL3/SDL.h>
+#include <SDL3/SDL_hints.h>
 #include <SDL3/SDL_vulkan.h>
 
 // This example doesn't compile with Emscripten yet! Awaiting SDL3 support.
@@ -386,6 +387,7 @@ static void FramePresent(ImGui_ImplVulkanH_Window* wd)
 int main(int, char**)
 {
     // Setup SDL
+    SDL_SetHint(SDL_HINT_VIDEO_WAYLAND_ENABLE_ZONES, "1");
     if (!SDL_Init(SDL_INIT_VIDEO | SDL_INIT_GAMEPAD) != 0)
     {
         printf("Error: SDL_Init(): %s\n", SDL_GetError());
